@@ -1,12 +1,11 @@
 'use strict'
 
-/* global Cypress */
+/* global Cypress, KeyboardEvent */
 function keydownCommand ($el, key) {
   const message = `sending the "${key}" keydown event`
   const log = Cypress.Log.command({
     name: `keydown: ${key}`,
     message: message,
-    $el: $el,
     onConsole: function () {
       return {
         Subject: $el
@@ -20,7 +19,7 @@ function keydownCommand ($el, key) {
     key: key
   })
 
-  $el.get(0).dispatchEvent(evt)
+  $el.dispatchEvent(evt)
   log.snapshot().end()
   return $el
 }

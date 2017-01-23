@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>test</title>
+  <style>
+  #app {
+    width: 400px;
+    height: 400px;
+    border: 2px solid blue;
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }
+  </style>
+</head>
+<body>
+<h1>Keyboard arrows test</h1>
+<div id="app"></div>
+<script>
+const app = document.querySelector('#app')
+document.addEventListener('keydown', (e) => {
+  console.log(e.type, e.key, e.keyCode)
+  app.innerText = e.key
+})
+</script>
+</body>
+</html>

@@ -8,10 +8,40 @@
 [![semantic-release][semantic-image] ][semantic-url]
 [![js-standard-style][standard-image]][standard-url]
 
+## Install and use
+
+```
+npm install --save-dev cypress-arrows
+```
+
+Add this project to `cypress/support/index.js` file
+
+```js
+import "./commands"
+import "./defaults"
+require('cypress-arrows')
+```
+
+Send commands usually via "document" from your specs
+
+```js
+it('sends several events', function(){
+    cy.document()
+      .left()
+      .right()
+      .up()
+      .down()
+  })
+```
+
+## Extra
+
+You can also use `cy.keydown(keyCode)` command. For example to send 's'
+you can enter `cy.keydown('s')` command.
+
 ### Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2017
-
 
 * [@bahmutov](https://twitter.com/bahmutov)
 * [glebbahmutov.com](http://glebbahmutov.com)
