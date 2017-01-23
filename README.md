@@ -34,6 +34,9 @@ it('sends several events', function(){
   })
 ```
 
+See Cypress tests in the project
+[bahmutov/2048-kensho](https://github.com/bahmutov/2048-kensho) as an example.
+
 ## Extra
 
 You can also use `cy.keydown(keyCode)` command. For example to send 's'
